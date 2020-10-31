@@ -1,32 +1,24 @@
-#ifndef _EquilateralTriangle_H
-#define _EquilateralTriangle_H
 #pragma once
-#include "Board.h"
 #include "Vertex.h"
-#include "Rectangle.h"
+#include "IsoscelesTriangle.h"
+
 class EquilateralTriangle
 {
-private:
-	Vertex Top, BottomLeft, BottomRight;
-	double Area, Center, Perimeter,Length;
-	Rectangle BoundingRectangle;
-
-	void setTop();
-	void setBottomLeft();
-	void SetBottomRight();
-	void setArea();
-	void setCenter();
-	void setBoundingRectangle();
 public:
-	EquilateralTriangle(const Vertex vertices[3]); //c'tor
-	void draw(Board& board)const; 
+	EquilateralTriangle();
+	EquilateralTriangle(Vertex vertices[3]);
+	
+	Vertex getVertex(int index) const;
+	double getLength();
+
+	void draw(Board& board)const;
+	Rectangle getBoundingRectangle() const;
+	double getArea() const;
+	double getPerimeter() const;
+	Vertex getCenter() const;
 	bool scale(double factor);
 
-	Vertex    getVertex(int index)  const;
-	double    getLength()           const;         //return the length of one line
-	Rectangle getBoundingRectangle()const;
-	double    getArea()             const;
-	double    getPerimeter()        const;
-	Vertex    getCenter()           const;
+private:
+	IsoscelesTriangle triangle;
 };
 #endif //_EquilateralTriangle_H
