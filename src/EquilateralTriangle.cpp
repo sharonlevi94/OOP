@@ -4,38 +4,39 @@ EquilateralTriangle::EquilateralTriangle() {
 	this->triangle = IsoscelesTriangle();
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::EquilateralTriangle(Vertex vertices[3]) {
+EquilateralTriangle::EquilateralTriangle(Vertex vertices[3])
+{
 	this->triangle = IsoscelesTriangle(vertices);
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::getVertex(int index) const {
+Vertex EquilateralTriangle::getVertex(int index) const {
 	return(this->triangle.getVertex(index));
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::getLength() {
+double EquilateralTriangle::getLength() {
 	return(this->triangle.getLegLength());
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::draw(Board& board)const {
+void EquilateralTriangle::draw(Board& board)const {
 	this->triangle.draw(board);
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::getBoundingRectangle() const {
+Rectangle EquilateralTriangle::getBoundingRectangle() const {
 	return(this->triangle.getBoundingRectangle());
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::getArea() const {
+double EquilateralTriangle::getArea() const {
 	return(this->triangle.getArea());
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::getPerimeter() const {
+double EquilateralTriangle::getPerimeter() const {
 	return(this->triangle.getPerimeter());
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::getCenter() const {
-	return(this->triangle.getCenter);
+Vertex EquilateralTriangle::getCenter() const {
+	return (this->triangle.getCenter());
 }
 //----------------------------------------------------------------------------
-EquilateralTriangle::scale(double factor) {
+bool EquilateralTriangle::scale(double factor) {
 	return(this->triangle.scale(factor));
 }
