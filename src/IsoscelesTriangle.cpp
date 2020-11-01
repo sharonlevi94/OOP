@@ -2,14 +2,15 @@
 
 //----------------------------------------------------------------------------
 IsoscelesTriangle::IsoscelesTriangle(const Vertex vertices[3])
-	//: IsoscelesTriangle(vertices[0], vertices[1],
-		//vertices[2].m_row - vertices[0].m_row)
 {
-	*this =
+	if (vertices[2].m_col == (vertices[0].m_col + vertices->m_col) / 2,
+		vertices[3].isValid())
+		*this =
 		IsoscelesTriangle(
 			vertices[0], vertices[1],
 			vertices[2].m_row - vertices[0].m_row);
-	
+	else
+		*this = IsoscelesTriangle();
 }
 //----------------------------------------------------------------------------
 IsoscelesTriangle::IsoscelesTriangle(const Vertex& v0,
@@ -19,7 +20,7 @@ IsoscelesTriangle::IsoscelesTriangle(const Vertex& v0,
 		this->vertices[0] = v0;
 		this->vertices[1] = v1;
 		this->vertices[2] =
-			Vertex((v1.m_col - v0.m_col) / 2, v1.m_row + height);
+			Vertex((v1.m_col + v0.m_col) / 2, v1.m_row + height);
 		return;
 	}
 	*this = IsoscelesTriangle();
