@@ -1,4 +1,7 @@
-﻿target_sources (ex01 PRIVATE "main.cpp"
+target_sources (ex01 PRIVATE "main.cpp"
                              "Vertex.cpp"
                              "Utilities.cpp"
-                             "Board.cpp")
+                             "Board.cpp"
+                             "Rectangle.cpp"
+                             "EquilateralTriangle.cpp"
+                             "IsoscelesTriangle.cpp")
