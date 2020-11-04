@@ -7,8 +7,8 @@ class IsoscelesTriangle
 public:
 	IsoscelesTriangle(const Vertex vertices[3]);
 	IsoscelesTriangle(
-		const Vertex& v0 = Vertex(20,20), 
-		const Vertex& v1 = Vertex(30,20), 
+		const Vertex& v0 = Vertex(20, 20),
+		const Vertex& v1 = Vertex(30, 20),
 		double height = sqrt(75));
 
 	Vertex getVertex(int index) const;
