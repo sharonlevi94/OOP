@@ -15,8 +15,8 @@
 IsoscelesTriangle::IsoscelesTriangle(const Vertex vertices[3])
 {
 	if (doubleEqual(
-		vertices[2].m_col,(vertices[0].m_col + vertices->m_col) / 2) &&
-		vertices[3].isValid())
+		vertices[2].m_col,(vertices[0].m_col + vertices[1].m_col) / 2) &&
+		vertices[1].isValid())
 		*this =
 		IsoscelesTriangle(
 			vertices[0], vertices[1],
