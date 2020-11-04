@@ -4,4 +4,5 @@ target_sources (ex01 PRIVATE "main.cpp"
                              "Board.cpp"
                              "Rectangle.cpp"
                              "EquilateralTriangle.cpp"
-                             "IsoscelesTriangle.cpp")
+                             "IsoscelesTriangle.cpp"
+                             "Window.cpp")
