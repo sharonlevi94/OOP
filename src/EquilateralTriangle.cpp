@@ -3,6 +3,10 @@
  */
  //---------------------------- include section -------------------------------
 #include "EquilateralTriangle.h"
+#include "IsoscelesTriangle.h"
+#include "Utilities.h"
+#include "Rectangle.h"
+#include "Vertex.h"
 //-------------------------- constractors section ----------------------------
 /*----------------------------------------------------------------------------
  * The constractor is check if the vertices received building an equilateral
@@ -15,7 +19,7 @@
 EquilateralTriangle::EquilateralTriangle(const Vertex vertices[3])
 {
 	IsoscelesTriangle temp = IsoscelesTriangle(vertices);
-	if (temp.getLegLength() == temp.getBaseLength())
+	if (doubleEqual(temp.getLegLength(), temp.getBaseLength()))
 		this->triangle = temp;
 	else
 		this->triangle = IsoscelesTriangle();
