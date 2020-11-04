@@ -2,7 +2,7 @@ OOP 1 Course - Exercise 01
 //=====================================================================//
 1. Students: 
 Sharon Levi | ID: 311593313 | login: sharonlevi
-Eliad Karni | ID: | login:
+Eliad Karni | ID: 206329104 | login = eliadka
 //=====================================================================//
 2.General Explaination:
 In this exercise we draw a shapes to the screen: 
