@@ -22,7 +22,7 @@ Window::Window(const Rectangle& outer, const Rectangle& inner)
 Window::Window(const Rectangle& outer, double verticalThickness, double horizontalThickness)
 	: Outer(outer), Inner(outer)
 {
-
+ //missed
 }
 //--------------------------Other  Functions-----------------------------------
 Vertex Window::getBottomLeft()           const  
