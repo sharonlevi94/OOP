@@ -5,11 +5,10 @@
 class EquilateralTriangle
 {
 public:
-	EquilateralTriangle();
-	EquilateralTriangle(Vertex vertices[3]);
-	
+	EquilateralTriangle(const Vertex vertices[3]);
+
 	Vertex getVertex(int index) const;
-	double getLength();
+	double getLength()const;
 
 	void draw(Board& board)const;
 	Rectangle getBoundingRectangle() const;
@@ -21,4 +20,3 @@ public:
 private:
 	IsoscelesTriangle triangle;
 };
-#endif //_EquilateralTriangle_H
