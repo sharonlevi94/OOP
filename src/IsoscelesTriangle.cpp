@@ -3,7 +3,9 @@
  */
  //---------------------------- include section -------------------------------
 #include "IsoscelesTriangle.h"
+#include "Utilities.h"
 #include "Vertex.h"
+#include "Rectangle.h"
 //-------------------------- constractors section ----------------------------
 /*----------------------------------------------------------------------------
  * The constractor is building  the object using array of 3 received Vertexes.
@@ -12,7 +14,8 @@
 */
 IsoscelesTriangle::IsoscelesTriangle(const Vertex vertices[3])
 {
-	if (vertices[2].m_col == (vertices[0].m_col + vertices->m_col) / 2 &&
+	if (doubleEqual(
+		vertices[2].m_col,(vertices[0].m_col + vertices->m_col) / 2) &&
 		vertices[3].isValid())
 		*this =
 		IsoscelesTriangle(
@@ -29,7 +32,7 @@ IsoscelesTriangle::IsoscelesTriangle(const Vertex vertices[3])
 */
 IsoscelesTriangle::IsoscelesTriangle(const Vertex& v0,
 	const Vertex& v1, double height) {
-	if (v0.isValid() && v1.isValid() && v0.m_row == v1.m_row
+	if (v0.isValid() && v1.isValid() && doubleEqual(v0.m_row, v1.m_row)
 		&& v1.isToTheRightOf(v0)) {
 		this->vertices[0] = v0;
 		this->vertices[1] = v1;
