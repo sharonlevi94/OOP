@@ -1,6 +1,7 @@
 #pragma once
 #include "Vertex.h"
 #include "IsoscelesTriangle.h"
+#include "Rectangle.h"
 
 class EquilateralTriangle
 {
