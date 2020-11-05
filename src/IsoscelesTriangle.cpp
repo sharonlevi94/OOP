@@ -58,7 +58,7 @@ Vertex IsoscelesTriangle::getVertex(int index) const {
  * output: The lenght of the triangle base edge.
 */
 double IsoscelesTriangle::getBaseLength() const {
-	return(this->vertices[1].m_col - this->vertices[0].m_col);
+	return(distance(this->vertices[1], this->vertices[0]));
 }
 /*----------------------------------------------------------------------------
   The method is calculates and return the lenght of the triangle's leg edge.
@@ -76,7 +76,10 @@ double IsoscelesTriangle::getLegLength() const {
  * output: The triangle height.
 */
 double IsoscelesTriangle::getHeight() const {
-	return(this->vertices[2].m_row - this->vertices[0].m_row);
+	double distance = this->vertices[2].m_row - this->vertices[0].m_row;
+	if (distance > 0)
+		return(distance);
+	return(-distance);
 }
 /*----------------------------------------------------------------------------
  * The method drawing the triangle using the received Board.
@@ -95,9 +98,8 @@ void IsoscelesTriangle::draw(Board& board)const {
 */
 Rectangle IsoscelesTriangle::getBoundingRectangle() const
 {
-	return (Rectangle(this->vertices[0],
-		Vertex(this->vertices[1].m_col,
-			this->vertices[2].m_row)));
+	return (Rectangle(this->getCenter(), 
+		this->getBaseLength(), this->getHeight()));
 }
 /*----------------------------------------------------------------------------
  * The method calculates and return the trangle's area.
@@ -121,12 +123,9 @@ double IsoscelesTriangle::getPerimeter() const {
  * output: triangle center Vertex.
 */
 Vertex IsoscelesTriangle::getCenter() const {
-	double x = 0, y = 0;
-	for (int i = 0; i < 3; ++i) {
-		x += this->vertices[i].m_col;
-		y += this->vertices[i].m_row;
-	}
-	return(Vertex(x / 3, y / 3));
+	double x = (this->vertices[0].m_col + this->vertices[1].m_col) / 2,
+		   y = (this->vertices[0].m_row + this->vertices[2].m_row) / 2;
+	return(Vertex(x, y));
 }
 /*----------------------------------------------------------------------------
  * The method is duplicate the triangle size, check if the new sized triangle
