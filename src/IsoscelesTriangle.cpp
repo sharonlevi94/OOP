@@ -87,9 +87,9 @@ double IsoscelesTriangle::getHeight() const {
  * output: none.
 */
 void IsoscelesTriangle::draw(Board& board)const {
+	board.drawLine(this->vertices[2], this->vertices[0]);
+	board.drawLine(this->vertices[2], this->vertices[1]);
 	board.drawLine(this->vertices[0], this->vertices[1]);
-	board.drawLine(this->vertices[0], this->vertices[2]);
-	board.drawLine(this->vertices[1], this->vertices[2]);
 }
 /*----------------------------------------------------------------------------
  * The method calculates and return the triangle's bounding Rectangle.
